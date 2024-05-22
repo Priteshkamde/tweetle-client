@@ -33,7 +33,7 @@ function SinglePost() {
           commentCount: data.getPost.commentCount + 1,
         },
       };
-      
+
       proxy.writeQuery({
         query: FETCH_POST_QUERY,
         variables: { postId },
@@ -48,6 +48,11 @@ function SinglePost() {
 
   const deletePostCallback = () => {
     navigate("/");
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submitComment();
   };
 
   let postMarkup;
@@ -99,7 +104,7 @@ function SinglePost() {
           <div className="ui comments">
             <div className="comment">
               <div className="content">
-                <form className="ui form">
+                <form className="ui form" onSubmit={handleSubmit}>
                   <div className="field">
                     <input
                       type="text"
@@ -113,7 +118,6 @@ function SinglePost() {
                     type="submit"
                     className="ui button teal"
                     disabled={comment.trim() === ""}
-                    onClick={submitComment}
                   >
                     Submit
                   </button>
