@@ -44,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://tweetle-server-xpaq.vercel.app/"
+  "proxy": "https://tweetle-server-xpaq.vercel.app/",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
+  }
 }
