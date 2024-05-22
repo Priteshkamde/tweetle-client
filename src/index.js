@@ -5,7 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from "apollo-link-context";
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5002', // Your GraphQL endpoint
+  uri: 'https://tweetle-server-xpaq.vercel.app/', // Your GraphQL endpoint
 });
 
 // // ngrok
